@@ -1,135 +1,91 @@
-# 📚 Contexto do Projeto — MRecursiva
+# 📘 Documento de Contexto — Projeto VOF-Drivers
 
-## ✨ Introdução
+## 📌 Nome do Projeto
 
-A extensão universitária é uma prática essencial que conecta universidade e sociedade. Promove a aplicação prática do conhecimento acadêmico, resolvendo problemas reais e estimulando a troca de saberes.
-
-Neste projeto, alunos do curso de **Análise e Desenvolvimento de Sistemas da PUC Minas** desenvolvem o **MRecursiva**, uma plataforma web que permite a **avaliação colaborativa de objetos de aprendizagem**, como jogos educativos digitais.
-
-> 🔍 **Desafio:** A parceira do projeto — pesquisadora da PUC Minas — utiliza um instrumento de avaliação analógico, dificultando o acesso, o preenchimento e a análise dos dados.
+**VOF-Drivers**
 
 ---
 
-## ❗ Problema Identificado
+## 🎯 Objetivo Geral
 
-O instrumento atual de avaliação é:
-
-- ❌ Analógico e de difícil acesso;
-- ❌ Lento para tabular e interpretar resultados;
-- ❌ Inviável para uso em escala com professores.
-
-> Com isso, perde-se agilidade e eficiência no processo avaliativo, prejudicando a adoção consciente de jogos digitais nas práticas pedagógicas.
+Desenvolver um sistema completo para análise, download e atualização de drivers de dispositivos em sistemas Windows, com foco em desempenho, segurança e praticidade. O projeto é inspirado no Driver Booster 12, mas com proposta mais moderna, leve, gratuita e integrada à VOF Assessoria.
 
 ---
 
-## 🎯 Objetivos
+## 🧩 Justificativa
 
-### 🎯 Objetivo Geral
-Transformar o instrumento analógico de avaliação em uma **solução digital interativa e automatizada**, promovendo a inovação no ensino.
+Usuários e técnicos frequentemente enfrentam problemas relacionados a drivers desatualizados ou ausentes, o que compromete o desempenho do sistema operacional, gera falhas em dispositivos e dificuldades de instalação. O VOF-Drivers surge como uma solução nacional, eficiente e de código aberto, que visa:
 
-### ✅ Objetivos Específicos
-
-- **Facilitar o uso pelos professores:**  
-  Interface intuitiva e acessível com modelos prontos de avaliação.
-
-- **Automatizar a tabulação e análise:**  
-  Eliminação de etapas manuais com geração automática de resultados.
-
-- **Gerar relatórios visuais:**  
-  Gráficos de radar e relatórios analíticos por eixo avaliativo (Pedagógico, Conteúdo, Interação, Tecnologia).
-
-- **Promover colaboração:**  
-  Avaliações compartilhadas e base de dados enriquecida com múltiplas perspectivas.
-
-- **Apoiar a inovação educacional:**  
-  Ferramenta útil para formação docente e integração dos jogos digitais no processo de ensino-aprendizagem.
+- Automatizar a detecção de drivers obsoletos
+- Oferecer atualizações confiáveis e seguras
+- Simplificar o processo de backup e restauração de drivers
+- Permitir funcionamento offline em ambientes sem internet
+- Integrar com ferramentas da VOF, como VOF-Remoto e VOF-ConversorPDF
 
 ---
 
-## 💡 Justificativa
+## 👤 Público-Alvo
 
-A transformação do instrumento de avaliação é necessária porque:
-
-- Garante **acesso mais amplo** a professores;
-- Elimina **barreiras técnicas** de uso e análise;
-- Permite **rapidez na obtenção de resultados**;
-- Estimula o **uso qualificado de jogos educativos**;
-- Amplia o impacto das pesquisas da parceira.
-
-> Com a plataforma digital, o processo de avaliação será ágil, interativo e colaborativo — promovendo maior engajamento entre educadores e inovação na prática pedagógica.
+- Técnicos de informática e suporte
+- Empresas de manutenção e TI
+- Usuários domésticos com dificuldades técnicas
+- Profissionais que formatam e reinstalam Windows com frequência
 
 ---
 
-## 🤝 Relação com a Extensão Universitária
+## 🌐 Abrangência
 
-- **Para a sociedade (professores):**  
-  Uma ferramenta gratuita, automatizada e colaborativa que promove o uso consciente de recursos educacionais digitais.
-
-- **Para os alunos:**  
-  Aplicação prática do conhecimento técnico, experiência com clientes reais e desenvolvimento de soluções com propósito social.
-
-- **Para a universidade:**  
-  Fortalecimento da missão extensionista ao integrar ensino, pesquisa e transformação social.
-
-> A extensão aqui se concretiza em um **ciclo virtuoso de aprendizagem e impacto social.**
+Sistema voltado inicialmente para **sistemas operacionais Windows** nas versões 10 e 11 (64 bits).  
+Futuramente, será expandido com versão Linux e integração com ambiente corporativo.
 
 ---
 
-## 👩‍🏫 Sobre a Parceira
+## 💼 Aplicações Práticas
 
-A colaboradora do projeto é uma **pesquisadora da PUC Minas**, especialista em:
-
-- Tecnologias educacionais e objetos de aprendizagem;
-- Jogos digitais educativos;
-- Formação de professores para uso de tecnologia no ensino.
-
-Seu trabalho busca promover **inovação pedagógica** e **uso crítico de recursos digitais** na educação, alinhando-se com as demandas da escola contemporânea.
+- Atualização em massa de drivers após formatação
+- Diagnóstico de problemas com dispositivos
+- Backup de drivers antes de reinstalar o sistema
+- Instalação offline com pacote de drivers personalizado
+- Suporte remoto com instalação de drivers via VOF-Remoto
 
 ---
 
-## 🧑‍💻 Tecnologias Utilizadas
+## 🔧 Tecnologias a serem utilizadas
 
-| Categoria         | Tecnologias                                              |
-|------------------|----------------------------------------------------------|
-| Linguagens       | TypeScript, JavaScript                                   |
-| Frontend         | React, Next.js, Tailwind CSS                             |
-| Backend          | Node.js, Express.js                                      |
-| Banco de Dados   | MySQL                                                    |
-| Autenticação     | JWT (JSON Web Tokens)                                    |
-| Outros           | Git, GitHub, ESLint, Vercel (Deploy), Figma (Protótipos) |
+- **Frontend:** React, TypeScript, Tailwind CSS
+- **Backend:** Node.js, Express, PostgreSQL
+- **App Desktop:** Electron
+- **Bibliotecas e APIs:** Windows WMI, Snappy Driver API (se possível)
+- **Deploy:** GitHub Releases + Empacotamento via Electron Builder
 
 ---
 
-## 👥 Equipe de Desenvolvimento
+## 📅 Estado do Projeto
 
-Projeto desenvolvido por alunos do curso de Análise e Desenvolvimento de Sistemas - PUC Minas:
-
-- **Evandro Kumasaka**  
-- **Gabrielly Cristiny Gonçalves Andrade**  
-- **João Gabriel Pereira da Silva**  
-- **Leonardo Igor Araújo de Souza**  
-- **Thiago Souza Dias**  
-- **Vagner de Oliveira Florêncio**
-
-> Com orientação e apoio de professores e da pesquisadora parceira.
+> **Status atual:** Estruturação e documentação inicial do repositório  
+> **Próxima etapa:** Definir funcionalidades essenciais e iniciar desenvolvimento da interface
 
 ---
 
-## 🤲 Como Contribuir
+## 🧠 Equipe
 
-Quer contribuir com o MRecursiva? Siga os passos abaixo:
-
-1. **Fork** este repositório
-2. Crie uma branch: `git checkout -b minha-feature`
-3. Faça suas alterações e commit: `git commit -m "Minha contribuição"`
-4. Envie para sua branch: `git push origin minha-feature`
-5. Abra um Pull Request explicando sua contribuição
+| Nome   | Função                                           |
+| ------ | ------------------------------------------------ |
+| Vagner | Desenvolvedor FullStack e idealizador do projeto |
 
 ---
 
-## 📄 Licença
+## 🔗 Projetos Relacionados
 
-Este projeto é acadêmico e está sob a licença [MIT](LICENSE).
+- [VOF-Remoto](https://github.com/vof-assessoria/vof-remoto) – suporte remoto
+- [VOF-ConversorPDF](https://github.com/vof-assessoria/vof-conversorpdf) – ferramenta de conversão de documentos
 
 ---
 
+## 🪪 Licença
+
+Este projeto está licenciado sob os termos da [Licença MIT](./LICENSE.md).
+
+---
+
+> Projeto mantido por **VOF Assessoria**.

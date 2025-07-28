@@ -1,128 +1,161 @@
-# Projeto de Interface - MRecursiva
+# 🎨 Projeto de Interface — VOF-Drivers
 
-## Visão Geral
-Documentação das telas e fluxos de interface do sistema MRecursiva.
+---
 
-## Telas do Sistema
+## 🖥️ Visão Geral da Interface
 
-### 1. Tela de Login
-![Tela de Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Login.png) <!-- Substitua pelo caminho real da imagem -->
+O VOF-Drivers terá uma interface moderna, leve e intuitiva, com **foco na experiência do usuário**, navegação simples e cores que transmitam tecnologia e segurança (azul, cinza escuro, verde para drivers atualizados, vermelho para problemas).
 
-**Descrição:**
-- Campos para email e senha
-- Botão "Entrar"
-- Link para "Esqueci minha senha"
-- Link para "Cadastrar-se"
+---
 
-### 2. Tela de Cadastro
-![Tela de Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Cadastro.png) <!-- Substitua pelo caminho real da imagem -->
+## 📁 Estrutura Principal da Aplicação
 
-**Descrição:**
-- Campos para nome completo, email, senha e confirme senha 
-- Botão "Criar conta"
-- Link para "Cadastrar com Google"
-- Link para "Faça Login"
+- **Menu lateral fixo**
 
-### 3. Tela de Redefinir Senha
-![Tela de Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Redefinir_Senha.png) <!-- Substitua pelo caminho real da imagem -->
+  - Ícones e texto
+  - Responsivo (colapsável)
+  - Acesso rápido às seções
 
-**Descrição:**
-- Campos para Nova senha e Confirmar senha 
-- Botão "Redefinir Senha"
-- Link para "Voltar para Login"
+- **Header com status**
 
-### 4. Tela de Recuperar Senha
-![Tela de Login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Recuperar_Senha.png) <!-- Substitua pelo caminho real da imagem -->
+  - Status de conexão e modo (online/offline)
+  - Botão de tema (claro/escuro)
+  - Nome do usuário e configurações
 
-**Descrição:**
-- Campos para E-mail 
-- Botão "Enviar link de recuperação"
-- Link para "Voltar para Login"
+- **Área de conteúdo dinâmica**
+  - Cada seção renderiza sua tela específica
+  - Componente reutilizável de cards/listas
 
-### 5. Dashboard Principal
-![Dashboard](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Dashboard.png)
+---
 
-**Elementos:**
-- Menu lateral com navegação
-- Resumo de atividades recentes
-- Gráficos de desempenho (se aplicável)
-- Ações rápidas
+## 🧭 Navegação
 
-### 6. Critérios de Avaliações
-![Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Criterios__Avaliacoes.png)
-![Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Criterios_Avaliacoes2.png)
+| Seção         | Rota / Tela | Ícone       |
+| ------------- | ----------- | ----------- |
+| Início        | `/home`     | `Home`      |
+| Verificação   | `/scan`     | `Search`    |
+| Atualizações  | `/updates`  | `Download`  |
+| Backup        | `/backup`   | `Save`      |
+| Modo Offline  | `/offline`  | `HardDrive` |
+| Histórico     | `/history`  | `Clock`     |
+| Configurações | `/settings` | `Settings`  |
+| Sobre         | `/about`    | `Info`      |
 
-**Funcionalidades:**
-- Tabela com lista de recursos
-- Filtros e busca
-- Botão para adicionar novo recurso
-- Ações por item (editar, visualizar, excluir)
+---
 
-### 7. Editar Critérios de Avaliações
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Editar_Criterio.png)
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Editar_Criterio2.png)
+## 🧱 Telas e Componentes
 
-**Elementos:**
-- Breadcrumb: "Distriboard > Critérios Avaliação"
-- Campo obrigatório "Nome*"
-- Seletor "Escrito de Avaliação"
-- Seletor "Selecione um eixo"
-- Área de texto "Descrição*" (pré-preenchida com exemplo)
-- Switch "Este critério é avaliável" com texto explicativo
-- Botões de ação:
-  - "Salvar"
-  - "Cancelar"
+### 1. 🏠 Tela Inicial (`/home`)
 
-### 8. Modelo de Avaliações
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Novo_Modelo_Avaliacoe.png)
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Editar_Modelo_Avaliacoes.png)
+- Boas-vindas
+- Botão “Verificar Agora”
+- Status do sistema (Drivers OK / Problemas encontrados)
+- Último backup e última verificação
 
-**Tabela de Avaliações**  
-   - Colunas:
-     - Objeto de Aprendizagem
-     - Avaliador
-     - Status (com tags visuais: Consulta, Susculta, Publicada)
-     - Pontuação (exibida quando disponível)
-     - Data de Criação
-     - Ações (ícone de opções)
+### 2. 🔍 Tela de Verificação (`/scan`)
 
-### 9. Objeto de Aprendizagem
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Objeto.png)
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Editar_Objteto_Aprendizagem.png)
+- Animação de escaneamento
+- Lista com resultado:
+  - Nome do driver
+  - Status (Atualizado / Desatualizado / Ausente)
+  - Ação: Atualizar, Ignorar
 
-**Tabela de Objeto de Aprendizagem**  
-   - Colunas:
-     - Objeto de Aprendizagem
-     - Avaliador
-     - Status (com tags visuais: Consulta, Susculta, Publicada)
-     - Pontuação (exibida quando disponível)
-     - Data de Criação
-     - Ações (ícone de opções)
+### 3. 📥 Tela de Atualizações (`/updates`)
 
-### 10. Avaliações
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Avaliacoes.png)
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Detalhes_Avaliacoes.png)
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Editar_Avaliacoes.png)
-![Editar Criterios de Avalocaoes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e5-proj-empext-t5-mrecursiva/blob/main/documentos/img/Tela_Nova_Avaliacoes.png)
+- Lista de drivers com versão atual e nova versão
+- Botões:
+  - Atualizar todos
+  - Atualizar individual
+- Barra de progresso por driver
 
-**Tabela de Avaliações**  
-   - Colunas:
-     - Objeto de Aprendizagem
-     - Avaliador
-     - Status (com tags visuais: Consulta, Susculta, Publicada)
-     - Pontuação (exibida quando disponível)
-     - Data de Criação
-     - Ações (ícone de opções)
+### 4. 💾 Tela de Backup (`/backup`)
 
+- Lista de drivers disponíveis para backup
+- Ações:
+  - Backup total
+  - Backup por categoria
+  - Restauração de backup existente
 
-## Fluxo de Navegação
+### 5. 📦 Modo Offline (`/offline`)
 
-```mermaid
-graph TD
-    A[Login] --> B[Dashboard]
-    B --> C[Lista de Recursos]
-    C --> D[Formulário de Cadastro]
-    C --> E[Visualização de Detalhes]
-    E --> F[Edição]
-    D --> C
-    F --> E
+- Upload de pacote `.zip` com drivers
+- Listagem e instalação offline
+- Validação de compatibilidade
+
+### 6. 🕓 Tela de Histórico (`/history`)
+
+- Tabela com:
+  - Data/hora
+  - Ação (Atualização / Backup / Restauração)
+  - Driver afetado
+  - Resultado (Sucesso / Falha)
+
+### 7. ⚙️ Configurações (`/settings`)
+
+- Idioma
+- Tema (claro / escuro)
+- Permitir modo técnico avançado
+- Agendamento de verificação
+- Notificações (ativar/desativar)
+
+### 8. ℹ️ Sobre (`/about`)
+
+- Nome e versão do app
+- Desenvolvedor: Vagner — VOF Assessoria
+- Licença MIT
+- Link para GitHub
+- Botão “Verificar atualizações”
+
+---
+
+## 🧩 Componentes Reutilizáveis
+
+- `SidebarMenu`
+- `HeaderStatus`
+- `DriverCard`
+- `UpdateProgressBar`
+- `BackupListItem`
+- `ModalConfirm`
+- `NotificationBanner`
+- `ThemeSwitcher`
+
+---
+
+## 🌐 Responsividade
+
+- Telas adaptadas para 1024px+ (desktop padrão)
+- Modo colapsável no menu lateral
+- Fontes legíveis, contrastes acessíveis
+
+---
+
+## 🎨 Paleta de Cores
+
+| Uso               | Cor sugerida |
+| ----------------- | ------------ |
+| Fundo claro       | `#F4F6F8`    |
+| Fundo escuro      | `#1A1A1A`    |
+| Primária (azul)   | `#3B82F6`    |
+| Sucesso (verde)   | `#10B981`    |
+| Erro (vermelho)   | `#EF4444`    |
+| Atenção (amarelo) | `#FBBF24`    |
+
+---
+
+## 🛡️ Acessibilidade e Usabilidade
+
+- Teclas de atalho para ações rápidas
+- Texto alternativo em ícones
+- Alto contraste para modo noturno
+- Feedbacks visuais para cada ação
+
+---
+
+## 📌 Observações
+
+- As telas serão feitas com React + Tailwind CSS
+- O layout será empacotado via Electron para distribuição como app de desktop
+
+---
+
+> Última atualização: Julho de 2025 • por Vagner (VOF Assessoria)
