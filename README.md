@@ -67,7 +67,7 @@ Este projeto está em **fase inicial de construção**. Se quiser contribuir ou 
 
 ## 🪪 Licença
 
-Distribuído sob a licença [MIT](./LICENSE).
+Distribuído sob a licença [MIT](./LICENSE.md).
 
 ---
 
