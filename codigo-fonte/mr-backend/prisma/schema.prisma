@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  @@map("roles")
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  users User[]
+}
+
+model User {
+  @@map("users")
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  role      Role      @relation(fields: [roleId], references: [id])
+  roleId    Int
+  models    EvaluationModel[] @relation("UserCreatedModels")
+  objects   LearningObject[]  @relation("UserCreatedObjects")
+  evaluations Evaluation[]
+  tokens    PassportToken[]
+}
+
+model Axis {
+  @@map("axes")
+  id          Int        @id @default(autoincrement())
+  name        String     @unique
+  description String?
+  criteria    Criterion[]
+}
+
+model Criterion {
+  @@map("criteria")
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String?
+  axis        Axis      @relation(fields: [axisId], references: [id])
+  axisId      Int
+  modelLinks  ModelCriterion[]
+  answers     EvaluationAnswer[]
+}
+
+model EvaluationModel {
+  @@map("evaluation_models")
+  id          Int              @id @default(autoincrement())
+  name        String           @unique
+  description String?
+  createdBy   User             @relation("UserCreatedModels", fields: [createdById], references: [id])
+  createdById Int
+  createdAt   DateTime         @default(now())
+  objectType  String?
+  criteria    ModelCriterion[]
+  objects     LearningObject[]
+  evaluations Evaluation[]
+}
+
+model ModelCriterion {
+  @@map("model_criteria")
+  id                 Int             @id @default(autoincrement())
+  evaluationModel    EvaluationModel @relation(fields: [evaluationModelId], references: [id])
+  evaluationModelId  Int
+  criterion          Criterion       @relation(fields: [criterionId], references: [id])
+  criterionId        Int
+
+  @@unique([evaluationModelId, criterionId])
+}
+
+model LearningObject {
+  @@map("learning_objects")
+  id              Int              @id @default(autoincrement())
+  name            String           @unique
+  description     String?
+  platform        String?
+  ageRange        String?
+  durationMinutes Int?
+  createdBy       User             @relation("UserCreatedObjects", fields: [createdById], references: [id])
+  createdById     Int
+  createdAt       DateTime         @default(now())
+  model           EvaluationModel  @relation(fields: [modelId], references: [id])
+  modelId         Int
+  evaluations     Evaluation[]
+}
+
+model Evaluation {
+  @@map("evaluations")
+  id             Int              @id @default(autoincrement())
+  user           User             @relation(fields: [userId], references: [id])
+  userId         Int
+  object         LearningObject   @relation(fields: [objectId], references: [id])
+  objectId       Int
+  model          EvaluationModel  @relation(fields: [modelId], references: [id])
+  modelId        Int
+  generalComment String?
+  createdAt      DateTime         @default(now())
+  answers        EvaluationAnswer[]
+}
+
+model EvaluationAnswer {
+  @@map("evaluation_answers")
+  id           Int         @id @default(autoincrement())
+  evaluation   Evaluation  @relation(fields: [evaluationId], references: [id])
+  evaluationId Int
+  criterion    Criterion   @relation(fields: [criterionId], references: [id])
+  criterionId  Int
+  score        Int
+
+  @@unique([criterionId, evaluationId])
+}
+
+model PassportToken {
+  @@map("passport_tokens")
+  id         Int      @id
+  user       User     @relation(fields: [userId], references: [id])
+  userId     Int
+  token      String?
+  createdAt  DateTime @default(now())
+  expiresAt  DateTime?
+}
